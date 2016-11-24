@@ -12,11 +12,11 @@
 		600060B31DE6F6ED00D8B2B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 600060B11DE6F6ED00D8B2B1 /* LaunchScreen.storyboard */; };
 		600060BE1DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060BD1DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoTests.swift */; };
 		600060C91DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060C81DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoUITests.swift */; };
-		600060D81DE6F75200D8B2B1 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060D71DE6F75200D8B2B1 /* ChildViewController.swift */; };
 		600060DA1DE6F75F00D8B2B1 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060D91DE6F75F00D8B2B1 /* UIView+Extension.swift */; };
 		600060DD1DE6F76900D8B2B1 /* AHConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060DB1DE6F76900D8B2B1 /* AHConfig.swift */; };
 		600060DE1DE6F76900D8B2B1 /* AHDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060DC1DE6F76900D8B2B1 /* AHDisplayViewController.swift */; };
 		600060E01DE6F7DA00D8B2B1 /* Text1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060DF1DE6F7DA00D8B2B1 /* Text1ViewController.swift */; };
+		600060E21DE6FC7000D8B2B1 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600060E11DE6FC7000D8B2B1 /* ChildViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +48,11 @@
 		600060C41DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHDisplayViewControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		600060C81DE6F6ED00D8B2B1 /* AHDisplayViewControllerDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHDisplayViewControllerDemoUITests.swift; sourceTree = "<group>"; };
 		600060CA1DE6F6ED00D8B2B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		600060D71DE6F75200D8B2B1 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = AHDisplayViewController/ChildViewController.swift; sourceTree = "<group>"; };
 		600060D91DE6F75F00D8B2B1 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		600060DB1DE6F76900D8B2B1 /* AHConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHConfig.swift; sourceTree = "<group>"; };
 		600060DC1DE6F76900D8B2B1 /* AHDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHDisplayViewController.swift; sourceTree = "<group>"; };
 		600060DF1DE6F7DA00D8B2B1 /* Text1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text1ViewController.swift; sourceTree = "<group>"; };
+		600060E11DE6FC7000D8B2B1 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 			children = (
 				600060D61DE6F73000D8B2B1 /* AHDisplayViewController */,
 				600060A81DE6F6ED00D8B2B1 /* AppDelegate.swift */,
-				600060D71DE6F75200D8B2B1 /* ChildViewController.swift */,
 				600060DF1DE6F7DA00D8B2B1 /* Text1ViewController.swift */,
+				600060E11DE6FC7000D8B2B1 /* ChildViewController.swift */,
 				600060AF1DE6F6ED00D8B2B1 /* Assets.xcassets */,
 				600060B11DE6F6ED00D8B2B1 /* LaunchScreen.storyboard */,
 				600060B41DE6F6ED00D8B2B1 /* Info.plist */,
@@ -283,7 +283,7 @@
 				600060DD1DE6F76900D8B2B1 /* AHConfig.swift in Sources */,
 				600060E01DE6F7DA00D8B2B1 /* Text1ViewController.swift in Sources */,
 				600060DE1DE6F76900D8B2B1 /* AHDisplayViewController.swift in Sources */,
-				600060D81DE6F75200D8B2B1 /* ChildViewController.swift in Sources */,
+				600060E21DE6FC7000D8B2B1 /* ChildViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
