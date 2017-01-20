@@ -38,7 +38,7 @@ class ChildViewController: AHDisplayViewController {
         }
 
         // 隐藏题滚动框加号按钮
-        addTitleButton.isHidden = true
+//        addTitleButton.isHidden = true
         
         // 设置整体尺寸
 //        setupContentViewFrame { (contentView) in
@@ -54,6 +54,13 @@ class ChildViewController: AHDisplayViewController {
 //        }
 
         setupChildVcs()
+        addTitleButton.addTarget(self, action: #selector(ChildViewController.addTitleButtonClick(_:)), for: .touchUpInside)
+    }
+    
+    func addTitleButtonClick(_ btn: UIButton) {
+        let vc = Text1ViewController()
+        vc.title = "频道"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

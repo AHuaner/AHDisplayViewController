@@ -88,9 +88,7 @@ class AHDisplayViewController: UIViewController {
         titleScrollView.scrollsToTop = false
         titleScrollView.backgroundColor = self.titleScrollViewColor
         titleScrollView.showsHorizontalScrollIndicator = false
-        
         titleScrollView.frame = CGRect(x: 0, y: 0, width: self.contentView.Width, height: self.titleScrollViewH)
-        self.contentView.addSubview(titleScrollView)
         return titleScrollView
     }()
     
@@ -101,28 +99,24 @@ class AHDisplayViewController: UIViewController {
         addTitleButton.setTitle("➕", for: UIControlState())
         addTitleButton.setTitleColor(UIColor.gray, for: UIControlState())
         addTitleButton.setTitleColor(UIColor.red, for: .highlighted)
-        addTitleButton.addTarget(self, action: #selector(AHDisplayViewController.addTitleButtonClick(_:)), for: .touchUpInside)
-        
         return addTitleButton
     }()
     
     /// 内容滚动视图
-    fileprivate lazy var contentScrollView: UICollectionView = {
+    lazy var contentScrollView: UICollectionView = {
         let layout = AHFlowLayout()
         
         let contentScrollView = UICollectionView(frame: self.contentView.bounds, collectionViewLayout: layout)
         // 设置内容滚动视图
-        contentScrollView.isPagingEnabled = true;
-        contentScrollView.showsHorizontalScrollIndicator = false;
-        contentScrollView.bounces = false;
-        contentScrollView.delegate = self;
-        contentScrollView.dataSource = self;
-        contentScrollView.scrollsToTop = false;
+        contentScrollView.isPagingEnabled = true
+        contentScrollView.showsHorizontalScrollIndicator = false
+        contentScrollView.bounces = false
+        contentScrollView.delegate = self
+        contentScrollView.dataSource = self
+        contentScrollView.scrollsToTop = false
         // 注册cell
         contentScrollView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ReusecellID)
-        
-        contentScrollView.backgroundColor = self.view.backgroundColor;
-        self.contentView.insertSubview(contentScrollView, belowSubview: self.titleScrollView)
+        contentScrollView.backgroundColor = self.view.backgroundColor
         
         return contentScrollView
     }()
@@ -218,6 +212,7 @@ extension AHDisplayViewController {
         
         if RealtotalWidth > contentViewW {
             self.titleMargin = margin
+            self.titleScrollView.isScrollEnabled = true
             return
         }
         
@@ -265,10 +260,14 @@ extension AHDisplayViewController {
         }
         
         titleScrollView.contentSize = CGSize(width: lastBtn.MaxX + titleMargin + (addTitleButton.isHidden ? 0 : addTitleButtonWidth), height: 0)
-        
         contentScrollView.contentSize = CGSize(width: contentViewW * CGFloat(count), height: 0)
         
+        contentView.addSubview(contentScrollView)
+        contentView.insertSubview(titleScrollView, aboveSubview: contentScrollView)
         contentView.insertSubview(addTitleButton, aboveSubview: titleScrollView)
+        
+        titleScrollView.insertSubview(coverView, at: 0)
+        titleScrollView.insertSubview(underLine, at: 0)
         
         addTitleButton.frame = CGRect(x: self.contentViewW - addTitleButtonWidth, y: 0, width: addTitleButtonWidth, height: self.titleScrollViewH)
     }
@@ -295,7 +294,7 @@ extension AHDisplayViewController {
     }
     
     /** 设置标题居中 */
-    fileprivate func setupSelectedBtnToCenter(_ selbtn: UIButton) {
+    func setupSelectedBtnToCenter(_ selbtn: UIButton) {
         if titleScrollView.isScrollEnabled == false {
             return
         }
@@ -427,9 +426,7 @@ extension AHDisplayViewController {
         isTitleClick = false
     }
     
-    func addTitleButtonClick(_ btn: UIButton) {
-        
-    }
+
 }
 
 
@@ -513,15 +510,12 @@ class AHFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         
-        minimumInteritemSpacing = 0;
+        minimumInteritemSpacing = 0
         
-        minimumLineSpacing = 0;
+        minimumLineSpacing = 0
         
-        //        if self.collectionView!.bounds.size.height != nil {
+        self.itemSize = self.collectionView!.bounds.size
         
-        self.itemSize = self.collectionView!.bounds.size;
-        //        }
-        
-        self.scrollDirection = UICollectionViewScrollDirection.horizontal;
+        self.scrollDirection = UICollectionViewScrollDirection.horizontal
     }
 }

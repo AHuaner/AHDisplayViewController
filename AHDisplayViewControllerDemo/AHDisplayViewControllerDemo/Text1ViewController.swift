@@ -40,5 +40,9 @@ class Text1ViewController: UITableViewController {
         cell.textLabel?.text = "\(title!)---\(indexPath.row)"
         return cell
     }
+    
+    deinit {
+        print("deinit---\(type(of: self))")
+    }
 }
 
